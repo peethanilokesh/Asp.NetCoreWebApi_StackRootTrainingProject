@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace Hospital_Management_API.ViewModels
 {
-    public class EditPatientViewModel
+    public class EditPatientViewModel:AddPatientViewModel
     {
+
     }
 }
