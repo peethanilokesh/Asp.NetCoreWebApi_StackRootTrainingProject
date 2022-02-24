@@ -12,13 +12,13 @@ namespace Hospital_Management_API.Repository
 
         Patient GetPatientById(int id);
 
-        Patient GetPatientByName(string name);
+        List<Patient> GetPatientByName(string name);
 
-        void AddPatient();
+        void AddPatient(Patient patient);
 
         void DeleteById(int id);
 
-        void EditPatient();
+        void EditPatient(Patient patient);
 
     }
 }
