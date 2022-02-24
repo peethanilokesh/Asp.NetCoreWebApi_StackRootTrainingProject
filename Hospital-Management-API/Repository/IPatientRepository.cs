@@ -12,11 +12,9 @@ namespace Hospital_Management_API.Repository
 
         Patient GetPatientById(int id);
 
-        Patient GetPatientByName(string name);
+        List<Patient> GetPatientByName(string name);
 
-        void AddPatient(Patient patient);
-
-       
+        void AddPatient();
 
         void DeleteById(int id);
 
