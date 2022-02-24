@@ -1,6 +1,7 @@
 ﻿using Hospital_Management_API.Model;
 using Hospital_Management_API.Repository;
 using Hospital_Management_API.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ namespace Hospital_Management_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class PatientController : ControllerBase
     {
         IPatientRepository _patientRepository;
@@ -41,7 +43,7 @@ namespace Hospital_Management_API.Controllers
         }
 
         [HttpGet]
-        [Route("/api/patient/{name}")]
+        [Route("/api/patientByName/{name}")]
         public IActionResult GetPatientByName(string name)
         {
             var patient = _patientRepository.GetPatientByName(name);
@@ -90,7 +92,7 @@ namespace Hospital_Management_API.Controllers
         }
 
         [HttpDelete]
-        [Route("/api/patient")]
+        [Route("/api/patient/{id}")]
         public IActionResult DeletePatient(int id)
         {
             _patientRepository.DeleteById(id);
