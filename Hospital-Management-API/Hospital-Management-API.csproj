@@ -9,6 +9,8 @@
     <Folder Include="Controllers\" />
     <Folder Include="DBContext\" />
     <Folder Include="Model\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
 
 
