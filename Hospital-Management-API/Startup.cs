@@ -34,6 +34,11 @@ namespace Hospital_Management_API
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
+
 
             app.UseRouting();
 
