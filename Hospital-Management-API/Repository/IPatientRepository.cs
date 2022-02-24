@@ -14,7 +14,7 @@ namespace Hospital_Management_API.Repository
 
         List<Patient> GetPatientByName(string name);
 
-        void AddPatient();
+        void AddPatient(Patient patient);
 
         void DeleteById(int id);
 
