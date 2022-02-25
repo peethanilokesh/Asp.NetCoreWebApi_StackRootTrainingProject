@@ -62,10 +62,12 @@ namespace Hospital_Management_API.Controllers
             {
                 PatientName = addPatientViewModel.PatientName,
                 PatientGender = addPatientViewModel.PatientGender,
+                RegisterDate = DateTime.Now,
                 PatientAge = addPatientViewModel.PatientAge,
                 Department = addPatientViewModel.Department,
                 DoctorName = addPatientViewModel.DoctorName,
-                DoctorFee = addPatientViewModel.DoctorFee
+                DoctorFee = addPatientViewModel.DoctorFee,
+                CreatedBy = HttpContext.User.Identity.Name
             };
             _patientRepository.AddPatient(patient);
             return CreatedAtAction("GetPatientById", new { id = patient.PatientId }, patient);
