@@ -13,7 +13,7 @@ namespace Hospital_Management_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class PatientController : ControllerBase
     {
         IPatientRepository _patientRepository;
@@ -98,7 +98,8 @@ namespace Hospital_Management_API.Controllers
         public IActionResult DeletePatient(int id)
         {
             _patientRepository.DeleteById(id);
-            return Ok($" Patient with id = {id} Removed");
+            return Ok();
+            //return Ok($"Patient with id = {id} Removed");
         }
     }
 }
