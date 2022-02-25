@@ -98,7 +98,8 @@ namespace Hospital_Management_API.Controllers
         public IActionResult DeletePatient(int id)
         {
             _patientRepository.DeleteById(id);
-            return Ok($" Patient with id = {id} Removed");
+            return Ok();
+            //return Ok($"Patient with id = {id} Removed");
         }
     }
 }
