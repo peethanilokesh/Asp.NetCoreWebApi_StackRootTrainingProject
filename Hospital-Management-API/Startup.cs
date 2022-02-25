@@ -58,6 +58,17 @@ namespace Hospital_Management_API
 
                 };
             });
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowAngularAppPolicy", options =>
+                {
+                    options.AllowAnyMethod();
+                    options.AllowAnyOrigin();
+                    options.AllowAnyHeader();
+
+                });
+            });
+
             services.AddTransient<IPatientRepository, SqlPatientRepository>();
 
         }
@@ -76,6 +87,8 @@ namespace Hospital_Management_API
 
 
             app.UseRouting();
+            app.UseCors("AllowAngularAppPolicy");
+
 
             app.UseAuthentication();
             app.UseAuthorization();
