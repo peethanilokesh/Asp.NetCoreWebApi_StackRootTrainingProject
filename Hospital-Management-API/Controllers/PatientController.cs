@@ -69,6 +69,7 @@ namespace Hospital_Management_API.Controllers
                 DoctorFee = addPatientViewModel.DoctorFee,
                 CreatedBy = HttpContext.User.Identity.Name
             };
+           
             _patientRepository.AddPatient(patient);
             return CreatedAtAction("GetPatientById", new { id = patient.PatientId }, patient);
         }

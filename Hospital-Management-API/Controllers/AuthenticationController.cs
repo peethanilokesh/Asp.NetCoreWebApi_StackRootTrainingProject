@@ -86,14 +86,16 @@ namespace Hospital_Management_API.Controllers
 
                 return Ok(new
                 {
+                    username = user.UserName,
                     token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
                     expiration = jwtSecurityToken.ValidTo
-                });
+                }) ;
 
             }
 
             return Ok(new
-            {
+            {   
+                username="",
                 token="Wroung",
                 expiration=DateTime.Now
             });
